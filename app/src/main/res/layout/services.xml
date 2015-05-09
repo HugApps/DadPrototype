@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="200px"
+    android:minHeight="300dp"
+    >
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Realtor"
+                    android:id="@+id/textView2"
+                    android:textColor="#ff060507"
+
+                    android:layout_alignLeft="@+id/HandyButton"
+                    android:layout_alignStart="@+id/HandyButton" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/HandyButton"
+                    android:src="@mipmap/realtor"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+                    android:layout_below="@+id/textView2"
+
+                    android:layout_column="1" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Notory Public"
+                    android:id="@+id/textView3"
+                    android:textColor="#ff09080b"
+
+                    android:layout_centerHorizontal="true" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/NotoryButton"
+                    android:layout_below="@+id/textView3"
+
+                    android:layout_alignLeft="@+id/textView3"
+                    android:layout_alignStart="@+id/textView3"
+                    android:src="@mipmap/briefcase"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+                    android:layout_weight="1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Lawyer"
+                    android:id="@+id/textView4"
+                    android:textColor="#ff09070a"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LawyerButton"
+                    android:src="@mipmap/lawyer"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+
+                    android:layout_span="1"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/textView4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="false" />
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/HomeInspectButton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+
+                    android:layout_below="@+id/textView5"
+                    android:src="@mipmap/inspector"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+                    android:layout_weight="1"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Home Inspector"
+                    android:id="@+id/textView5"
+                    android:textColor="#ff030304"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Insurance"
+                    android:id="@+id/textView6"
+                    android:textColor="#ff030304"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/InsuranceButton"
+
+                    android:src="@mipmap/insurance"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="top|left|bottom|right"
+                    android:layout_below="@+id/textView6"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Mortage"
+                    android:id="@+id/textView7"
+                    android:textColor="#ff030304"
+                     />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MortgageButton"
+
+                    android:src="@mipmap/mortage"
+                    android:maxHeight="100dp"
+                    android:maxWidth="100dp"
+                    android:minHeight="100dp"
+                    android:minWidth="100dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="top|left|bottom|right"
+                    android:layout_below="@+id/textView7"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
