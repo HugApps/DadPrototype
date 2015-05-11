@@ -85,85 +85,12 @@
             android:layout_below="@+id/relativeLayout"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="#ffae8e83">
+            android:background="#ffae8e83"
+            android:id="@+id/resulttable">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="HomeSafe Ltd"
-                        android:id="@+id/textView8"
-                        android:textColor="#ff000000" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageView2"
-                        android:src="@mipmap/handy"
-                        android:layout_below="@+id/textView8"
-                        android:layout_alignRight="@+id/textView8"
-                        android:layout_alignEnd="@+id/textView8"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxHeight="20dp"
-
-                        android:id="@+id/ratingBar"
-                        android:minHeight="40dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Contact"
-                        android:id="@+id/textView10"
-                        android:layout_above="@+id/ratingBar"
-                        android:layout_marginLeft="21dp"
-                        android:layout_marginStart="21dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Locate"
-                        android:id="@+id/textView9"
-                        android:layout_marginRight="39dp"
-                        android:layout_marginEnd="39dp"
-                        android:layout_above="@+id/ratingBar"
-                        android:layout_alignRight="@+id/ratingBar"
-                        android:layout_alignEnd="@+id/ratingBar" />
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                </LinearLayout>
 
             </TableRow>
 
