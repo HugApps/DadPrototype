@@ -10,49 +10,48 @@
         android:id="@+id/logo"
         android:src="@mipmap/landscape"
         android:layout_weight="0.09"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/textView11"
-        android:layout_toLeftOf="@+id/textView11" />
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text="Details"
         android:id="@+id/DetailsText"
-        android:layout_above="@+id/ratingBar2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:clickable="true"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/logo"
+        android:layout_toEndOf="@+id/logo"
+        android:layout_alignBottom="@+id/logo"
+        android:elegantTextHeight="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:enabled="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text="Contact"
         android:id="@+id/ContactText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:clickable="true"
+        android:layout_below="@+id/textView11"
+        android:layout_toRightOf="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="Tom's Handy Job"
         android:id="@+id/textView11"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar2"
-        android:layout_below="@+id/logo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp" />
+        android:layout_toRightOf="@+id/logo"
+        android:layout_toEndOf="@+id/logo" />
 
 </RelativeLayout>

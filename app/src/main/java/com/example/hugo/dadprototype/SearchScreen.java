@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.RatingBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -36,7 +37,7 @@ public class SearchScreen extends Fragment {
         category = getArguments().getString("category");
         TextView title = (TextView) view.findViewById(R.id.searchtitle);
 
-        title.setText("Search for: " + " " + category);
+        title.setText( category);
 
         return view;
 
@@ -45,25 +46,27 @@ public class SearchScreen extends Fragment {
 
 
     public void populateRow (int numofresults){
-        // For now just make 3 rows
+        // For now just make 3 rows, eventually fetch from database
 
-        for (int i = 0 ; i <3 ; i ++){
+        for (int i = 1 ; i <10 ; i ++){
 
             // make new instance of table row
-
+            int id = i;
             TableRow row = new TableRow(getActivity());
-            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+            HorizontalScrollView scroller = new HorizontalScrollView(getActivity());
+            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);scroller.setLayoutParams(lp);
             row.setLayoutParams(lp);
             FrameLayout frame = new FrameLayout(getActivity());
-
-            row.addView(frame);
-
-            // inflate fragment replace frame with fragment //
+            frame.setId(id); scroller.addView(frame);row.addView(scroller);
+           //ow.addView(frame);
 
             // Pass i specfic data to display on the row//
-            Fragment rowdata = new TableRowFrag();
+            TableRowFrag rowdata = new TableRowFrag();
+
             FragmentManager m = getFragmentManager();
-            m.beginTransaction().replace(frame.getId(), rowdata).commit();
+
+            m.beginTransaction().replace(i, rowdata).commit();
+            rowdata.addDetails("a","b","c","d","e");
 
             table.addView(row);
 
