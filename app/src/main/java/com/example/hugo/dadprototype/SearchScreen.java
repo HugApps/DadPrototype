@@ -66,7 +66,7 @@ public class SearchScreen extends Fragment {
             FragmentManager m = getFragmentManager();
 
             m.beginTransaction().replace(i, rowdata).commit();
-            rowdata.addDetails("a","b","c","d","e");
+            rowdata.addDetails("Mr.Chen Law ","A trust worthy lawyer","c","d","e");
 
             table.addView(row);
 

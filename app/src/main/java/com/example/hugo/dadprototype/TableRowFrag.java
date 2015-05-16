@@ -40,6 +40,7 @@ public class TableRowFrag extends Fragment {
         this.address = address;
         this.phone = phone;
         this.email = email;
+
     }
 
 
@@ -53,7 +54,7 @@ public class TableRowFrag extends Fragment {
         View view = inflater.inflate(R.layout.customerowfrag,container,false);
         Title = (TextView)view.findViewById(R.id.title);
 
-        if(name!=null){Title.setText(name);}
+        //if(name!=null){Title.setText(name);}
         Details = (TextView) view.findViewById(R.id.DetailsText);
         Contact = (TextView) view.findViewById(R.id.ContactText);
         Contact.setOnClickListener(CallClickListener);
@@ -73,15 +74,17 @@ public class TableRowFrag extends Fragment {
 
         public void onClick(View v) {
             // Loads new Fragment and passes details to fragment
-        // FragmentManager m =  getFragmentManager();
-        // Fragment f = new Fragment(); // Replacee with new Fragment
+         FragmentManager m =  getFragmentManager();
+         DetailsFragment f = new DetailsFragment(); // Replacee with new Fragment
          Bundle bundle = new Bundle();
+
          bundle.putString("name",name);
          bundle.putString("description",description);
          bundle.putString("address",address);
          bundle.putString("email",email);
          bundle.putString("phone",phone);
-         //m.beginTransaction().replace(R.id.contentDisplay, f).commit();
+         f.setArguments(bundle);
+         m.beginTransaction().replace(R.id.contentDisplay, f).commit();
 
 
         }

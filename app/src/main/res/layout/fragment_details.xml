@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hugo.dadprototype.DetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/DTitle"
+        android:textColor="#ff000000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/callbutton"
+        android:layout_gravity="left|top"
+        android:src="@mipmap/ic_call2"
+        android:layout_marginBottom="27dp"
+        android:layout_above="@+id/scrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapframe"
+        android:visibility="invisible"
+        android:layout_toEndOf="@+id/DTitle">
+
+        <fragment
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/abc_list_menu_item_checkbox" />
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Description"
+        android:id="@+id/DHeading"
+        android:layout_below="@+id/DTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="218dp"
+        android:textColor="#ff000000" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_below="@+id/DHeading"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frameLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/DHeading">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/DText"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frameLayout"
+                android:layout_toEndOf="@+id/frameLayout" />
+        </FrameLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/email"
+        android:layout_alignBottom="@+id/callbutton"
+        android:layout_toEndOf="@+id/callbutton"
+        android:src="@mipmap/ic_email"
+        android:layout_toRightOf="@+id/callbutton" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/map"
+
+        android:src="@mipmap/ic_pin"
+        android:layout_alignTop="@+id/email"
+        android:layout_toRightOf="@+id/email"
+        android:layout_toEndOf="@+id/email" />
+
+</RelativeLayout>
