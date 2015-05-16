@@ -24,9 +24,7 @@
         android:layout_gravity="left|top"
         android:src="@mipmap/ic_call2"
         android:layout_marginBottom="27dp"
-        android:layout_above="@+id/scrollView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/scrollView2" />
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -63,7 +61,9 @@
         android:layout_below="@+id/DHeading"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -101,7 +101,16 @@
 
         android:src="@mipmap/ic_pin"
         android:layout_alignTop="@+id/email"
-        android:layout_toRightOf="@+id/email"
-        android:layout_toEndOf="@+id/email" />
+        android:layout_toEndOf="@+id/email"
+        android:layout_toRightOf="@+id/email" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/webbutton"
+        android:layout_alignTop="@+id/map"
+        android:layout_toEndOf="@+id/map"
+        android:src="@mipmap/ic_world"
+        android:focusableInTouchMode="false" />
 
 </RelativeLayout>

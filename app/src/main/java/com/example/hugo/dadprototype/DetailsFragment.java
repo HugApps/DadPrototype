@@ -3,6 +3,7 @@ package com.example.hugo.dadprototype;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.provider.ContactsContract;
@@ -24,7 +25,7 @@ public class DetailsFragment extends Fragment {
    TextView Title;
    GoogleMap googleMap;
    FrameLayout mapframe;
-   ImageButton mapbutton,callbutton,emailbutton;
+   ImageButton mapbutton,callbutton,emailbutton,webbutton;
 
     public DetailsFragment() {
         // Required empty public constructor
@@ -39,6 +40,7 @@ public class DetailsFragment extends Fragment {
         Details = (TextView) v.findViewById(R.id.DText);
         Title = (TextView) v.findViewById(R.id.DTitle);
         mapframe = (FrameLayout) v.findViewById(R.id.mapframe);
+        webbutton = (ImageButton) v.findViewById(R.id.webbutton);webbutton.setOnClickListener(WebMapClickListener);
         mapbutton= (ImageButton) v.findViewById(R.id.map);mapbutton.setOnClickListener(MapClickListener);
         callbutton =(ImageButton) v.findViewById(R.id.callbutton);callbutton.setOnClickListener(CallClickListener);
         emailbutton = (ImageButton)v.findViewById(R.id.email);emailbutton.setOnClickListener(EmailClickListener);
@@ -62,7 +64,13 @@ public class DetailsFragment extends Fragment {
 
         public void onClick(View v) {
             // Loads new Fragment and passes details to fragment
+           if(mapframe.getVisibility()== View.VISIBLE) {
+               mapframe.setVisibility(View.GONE);
+               return;
+           }
+          // mapframe.addView(v.findViewById(R.id.mapView));
            mapframe.setVisibility(View.VISIBLE);
+
 
 
         }
@@ -74,7 +82,9 @@ public class DetailsFragment extends Fragment {
 
         public void onClick(View v) {
             // Loads new Fragment and passes details to fragment
-            mapframe.setVisibility(View.VISIBLE);
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" +Uri.encode("12345")));
+             startActivity(intent);
 
 
         }
@@ -95,6 +105,25 @@ public class DetailsFragment extends Fragment {
 
 /* Send it off to the Activity-Chooser */
             getActivity().startActivity(Intent.createChooser(sendIntent, "Send mail...")) ;
+
+
+        }
+
+    };
+
+
+
+
+    private View.OnClickListener WebMapClickListener = new View.OnClickListener() {
+
+
+        public void onClick(View v) {
+            // Loads new Fragment and passes details to fragment
+          String url ="http://www.facebook.com";
+          Intent web = new Intent(Intent.ACTION_VIEW);
+          web.setData(Uri.parse(url));
+          startActivity(web);
+
 
 
         }
