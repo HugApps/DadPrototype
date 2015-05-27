@@ -2,6 +2,7 @@ package com.example.hugo.dadprototype;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,19 +11,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
-
+/* Need code to add fragments to back stack, and pop each stack when back button is pressed, close app if no fragment open */
 public class MainActivity extends ActionBarActivity {
-
+    public  FragmentManager fragmanager;
+    public FragmentTransaction ft;
     private String[] menuitems;
     private DrawerLayout Drawer;
     private ListView Dropdown;
+    private int size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fragmanager = getFragmentManager();
+        ft = fragmanager.beginTransaction();
         setContentView(R.layout.activity_main);
-
+        size = fragmanager.getBackStackEntryCount();
         // intantiate the string array as options for drop down menu
         menuitems = getResources().getStringArray(R.array.menuarray);
         Drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -45,7 +51,19 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    @Override
+    public void onBackPressed(){
+        getFragmentManager().popBackStack();
+       /* if(getFragmentManager().getBackStackEntryCount()==0){
+            getFragmentManager().popBackStack();
 
+
+        }
+        else {
+            super.onBackPressed();
+        }*/
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -67,6 +85,7 @@ public class MainActivity extends ActionBarActivity {
     public class MenuItemClickListener implements ListView.OnItemClickListener{
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id){
+         FrameLayout FragFrame = (FrameLayout) findViewById(R.id.contentDisplay);
 
          switch (position){
 
@@ -87,14 +106,23 @@ public class MainActivity extends ActionBarActivity {
 
              case 2:
                  Fragment fragment2 = new ServicesFrag();
-                 FragmentManager m2 = getFragmentManager();
-                 m2.beginTransaction().replace(R.id.contentDisplay,fragment2).commit();
+
+                 FragFrame.removeAllViews();
+
+               // ft.addToBackStack("stack2");
+
+                // .replace(R.id.contentDisplay, fragment2).commit();
+                 fragmanager.beginTransaction().replace(R.id.contentDisplay, fragment2).addToBackStack("a").commit();
                  break;
 
              case 3:
                  Fragment fragment3 = new MaintainanceFrag();
-                FragmentManager m3 = getFragmentManager();
-                 m3.beginTransaction().replace(R.id.contentDisplay,fragment3).commit();
+
+                 FragFrame.removeAllViews();
+               //  ft.addToBackStack("stack");
+
+               //  ft.replace(R.id.contentDisplay, fragment3).commit();
+                 fragmanager.beginTransaction().replace(R.id.contentDisplay, fragment3).addToBackStack("b").commit();
                  break;
 
              case 4:
@@ -112,6 +140,8 @@ public class MainActivity extends ActionBarActivity {
               break;}
             Dropdown.setItemChecked(position, true);
             setTitle(menuitems[position]);
+
+
             Drawer.closeDrawer(Dropdown);
 
 
