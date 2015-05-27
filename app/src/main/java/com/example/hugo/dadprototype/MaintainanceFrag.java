@@ -114,7 +114,7 @@ public class MaintainanceFrag extends Fragment {
             }
 
 
-            m.beginTransaction().replace(R.id.contentDisplay, frag).commit();
+            m.beginTransaction().replace(R.id.contentDisplay, frag).addToBackStack("search2").commit();
 
 
         }

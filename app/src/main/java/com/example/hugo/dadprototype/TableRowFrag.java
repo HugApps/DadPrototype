@@ -84,7 +84,7 @@ public class TableRowFrag extends Fragment {
          bundle.putString("email",email);
          bundle.putString("phone",phone);
          f.setArguments(bundle);
-         m.beginTransaction().replace(R.id.contentDisplay, f).commit();
+         m.beginTransaction().replace(R.id.contentDisplay, f).addToBackStack("details").commit();
 
 
         }
